@@ -1,3 +1,77 @@
+// WhatsApp Popup Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const whatsappButton = document.getElementById('whatsappButton');
+    const whatsappChat = document.getElementById('whatsappChat');
+    const whatsappClose = document.getElementById('whatsappClose');
+    const whatsappSend = document.getElementById('whatsappSend');
+    const whatsappInput = document.getElementById('whatsappInput');
+    
+    if (whatsappButton && whatsappChat) {
+        // Toggle chat window
+        whatsappButton.addEventListener('click', function() {
+            whatsappChat.classList.toggle('active');
+        });
+        
+        // Close chat window
+        if (whatsappClose) {
+            whatsappClose.addEventListener('click', function() {
+                whatsappChat.classList.remove('active');
+            });
+        }
+        
+        // Send message functionality
+        if (whatsappSend && whatsappInput) {
+            whatsappSend.addEventListener('click', sendMessage);
+            whatsappInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        }
+        
+        function sendMessage() {
+            const message = whatsappInput.value.trim();
+            if (message) {
+                // Add user message to chat
+                addMessageToChat(message, 'user');
+                
+                // Clear input
+                whatsappInput.value = '';
+                
+                // Simulate bot response
+                setTimeout(() => {
+                    const responses = [
+                        "Thank you for your message! Our team will get back to you shortly.",
+                        "I understand you need assistance. Let me connect you with our support team.",
+                        "Your message has been received. Someone will respond within minutes.",
+                        "Thanks for reaching out! How can I help you with our services today?"
+                    ];
+                    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                    addMessageToChat(randomResponse, 'bot');
+                }, 1000);
+            }
+        }
+        
+        function addMessageToChat(message, sender) {
+            const messagesContainer = whatsappChat.querySelector('.whatsapp-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `whatsapp-message ${sender}`;
+            messageDiv.innerHTML = `<p>${message}</p>`;
+            messagesContainer.appendChild(messageDiv);
+            
+            // Scroll to bottom
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+        
+        // Close chat when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!whatsappChat.contains(e.target) && !whatsappButton.contains(e.target)) {
+                whatsappChat.classList.remove('active');
+            }
+        });
+    }
+});
+
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
