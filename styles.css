@@ -141,7 +141,6 @@ body {
     overflow: hidden;
     position: relative;
     box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
-    border: 3px solid white;
 }
 
 .hero-video {
@@ -2189,7 +2188,6 @@ body {
     .video-container {
         height: 300px;
         border-radius: 16px;
-        border: 2px solid white;
     }
 
     .video-control-btn {
@@ -2272,7 +2270,6 @@ body {
     .video-container {
         height: 250px;
         border-radius: 12px;
-        border: 2px solid white;
     }
 
     .video-control-btn {
