@@ -161,28 +161,6 @@ body {
     pointer-events: none;
 }
 
-.hero-graphic {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100px;
-    height: 100px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: float 3s ease-in-out infinite;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.hero-graphic::before {
-    content: '🌐';
-    font-size: 3rem;
-}
-
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
@@ -1143,15 +1121,6 @@ body {
         border-radius: 16px;
     }
 
-    .hero-graphic {
-        width: 80px;
-        height: 80px;
-    }
-
-    .hero-graphic::before {
-        font-size: 2.5rem;
-    }
-
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1225,15 +1194,6 @@ body {
     .video-container {
         height: 250px;
         border-radius: 12px;
-    }
-
-    .hero-graphic {
-        width: 60px;
-        height: 60px;
-    }
-
-    .hero-graphic::before {
-        font-size: 2rem;
     }
 
     .stats-grid {
