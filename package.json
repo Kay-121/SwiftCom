@@ -1,0 +1,24 @@
+{
+  "name": "swiftcom-website",
+  "version": "1.0.0",
+  "description": "SwiftCom telecommunications website with automatic Git pushing",
+  "main": "auto-push.js",
+  "scripts": {
+    "start": "node auto-push.js",
+    "watch": "node auto-push.js",
+    "dev": "start cmd /k \"node auto-push.js && python -m http.server 8000\"",
+    "auto-push": "auto-push.bat"
+  },
+  "keywords": [
+    "telecommunications",
+    "website",
+    "auto-push",
+    "git",
+    "swiftcom"
+  ],
+  "author": "SwiftCom Team",
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^3.5.3"
+  }
+}
