@@ -1,3 +1,83 @@
+// Testimonials Carousel Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const testimonials = document.querySelectorAll('.testimonial-item');
+    const prevBtn = document.getElementById('prevTestimonial');
+    const nextBtn = document.getElementById('nextTestimonial');
+    const dotsContainer = document.getElementById('testimonialDots');
+    
+    let currentTestimonial = 0;
+    let autoPlayInterval;
+    
+    // Create dots
+    function createDots() {
+        for (let i = 0; i < testimonials.length; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToTestimonial(i));
+            dotsContainer.appendChild(dot);
+        }
+    }
+    
+    // Update dots
+    function updateDots() {
+        const dots = dotsContainer.querySelectorAll('.dot');
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentTestimonial);
+        });
+    }
+    
+    // Go to specific testimonial
+    function goToTestimonial(index) {
+        testimonials[currentTestimonial].classList.remove('active');
+        currentTestimonial = index;
+        testimonials[currentTestimonial].classList.add('active');
+        updateDots();
+        resetAutoPlay();
+    }
+    
+    // Next testimonial
+    function nextTestimonial() {
+        const nextIndex = (currentTestimonial + 1) % testimonials.length;
+        goToTestimonial(nextIndex);
+    }
+    
+    // Previous testimonial
+    function prevTestimonial() {
+        const prevIndex = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+        goToTestimonial(prevIndex);
+    }
+    
+    // Auto-play
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextTestimonial, 5000);
+    }
+    
+    function resetAutoPlay() {
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+    }
+    
+    // Event listeners
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', prevTestimonial);
+        nextBtn.addEventListener('click', nextTestimonial);
+    }
+    
+    // Initialize
+    if (testimonials.length > 0) {
+        createDots();
+        startAutoPlay();
+        
+        // Pause auto-play on hover
+        const carousel = document.querySelector('.testimonials-carousel');
+        if (carousel) {
+            carousel.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+            carousel.addEventListener('mouseleave', startAutoPlay);
+        }
+    }
+});
+
 // Video Control Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const heroVideo = document.getElementById('heroVideo');
