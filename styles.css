@@ -234,11 +234,13 @@ body {
 .btn-primary {
     background: #8b5cf6;
     color: white;
+    border: 2px solid white;
 }
 
 .btn-primary:hover {
     background: #7c3aed;
     transform: translateY(-2px);
+    border-color: white;
 }
 
 .btn-secondary {
