@@ -1,11 +1,26 @@
 // Enhanced Service Calculator JavaScript
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Calculator script loaded');
+    
     const userSlider = document.getElementById('userSlider');
     const userCount = document.getElementById('userCount');
     const nextBtn = document.getElementById('nextBtn');
     const prevBtn = document.getElementById('prevBtn');
     const calculateBtn = document.getElementById('calculateBtn');
     const resultsContent = document.getElementById('resultsContent');
+    
+    // Check if all elements exist
+    if (!userSlider || !userCount || !nextBtn || !prevBtn || !calculateBtn || !resultsContent) {
+        console.error('Missing calculator elements:', {
+            userSlider: !!userSlider,
+            userCount: !!userCount,
+            nextBtn: !!nextBtn,
+            prevBtn: !!prevBtn,
+            calculateBtn: !!calculateBtn,
+            resultsContent: !!resultsContent
+        });
+        return;
+    }
     
     let currentStep = 1;
     const totalSteps = 5;
@@ -38,31 +53,35 @@ document.addEventListener('DOMContentLoaded', function() {
     calculateBtn.addEventListener('click', calculatePlan);
     
     function nextStep() {
+        console.log('Next step clicked, current:', currentStep);
         if (currentStep < totalSteps) {
             showStep(currentStep + 1);
         }
     }
     
     function prevStep() {
+        console.log('Previous step clicked, current:', currentStep);
         if (currentStep > 1) {
             showStep(currentStep - 1);
         }
     }
     
     function showStep(step) {
+        console.log('Showing step:', step);
+        
         // Hide current step
         const currentSection = document.querySelector(`.form-section[data-section="${currentStep}"]`);
         const currentProgress = document.querySelector(`.progress-step[data-step="${currentStep}"]`);
         
-        currentSection.classList.remove('active');
-        currentProgress.classList.remove('active');
+        if (currentSection) currentSection.classList.remove('active');
+        if (currentProgress) currentProgress.classList.remove('active');
         
         // Show new step
         const newSection = document.querySelector(`.form-section[data-section="${step}"]`);
         const newProgress = document.querySelector(`.progress-step[data-step="${step}"]`);
         
-        newSection.classList.add('active');
-        newProgress.classList.add('active');
+        if (newSection) newSection.classList.add('active');
+        if (newProgress) newProgress.classList.add('active');
         
         currentStep = step;
         updateNavigationButtons();
@@ -88,22 +107,39 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Calculate button click handler
     function calculatePlan() {
-        const businessType = document.querySelector('input[name="businessType"]:checked').value;
+        console.log('Calculate plan clicked');
+        
+        const businessType = document.querySelector('input[name="businessType"]:checked');
+        const speed = document.querySelector('input[name="speed"]:checked');
+        const contract = document.querySelector('input[name="contract"]:checked');
+        
+        if (!businessType || !speed || !contract) {
+            console.error('Missing form selections');
+            alert('Please complete all selections before calculating your plan.');
+            return;
+        }
+        
         const users = parseInt(userSlider.value);
-        const speed = document.querySelector('input[name="speed"]:checked').value;
-        const contract = document.querySelector('input[name="contract"]:checked').value;
         
         // Get additional services
         const services = {
-            mobile: document.getElementById('mobile').checked,
-            voip: document.getElementById('voip').checked,
-            cloud: document.getElementById('cloud').checked,
-            security: document.getElementById('security').checked
+            mobile: document.getElementById('mobile')?.checked || false,
+            voip: document.getElementById('voip')?.checked || false,
+            cloud: document.getElementById('cloud')?.checked || false,
+            security: document.getElementById('security')?.checked || false
         };
+        
+        console.log('Form data:', {
+            businessType: businessType.value,
+            users,
+            speed: speed.value,
+            contract: contract.value,
+            services
+        });
         
         // Calculate base price
         let basePrice = 0;
-        switch(speed) {
+        switch(speed.value) {
             case 'basic': basePrice = 29; break;
             case 'professional': basePrice = 79; break;
             case 'enterprise': basePrice = 199; break;
@@ -111,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Business type multiplier
         let businessMultiplier = 1;
-        switch(businessType) {
+        switch(businessType.value) {
             case 'residential': businessMultiplier = 1; break;
             case 'small-business': businessMultiplier = 1.2; break;
             case 'enterprise': businessMultiplier = 1.5; break;
@@ -126,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Apply contract discount
         let discount = 0;
-        switch(contract) {
+        switch(contract.value) {
             case 'monthly': discount = 0; break;
             case 'annual': discount = 0.1; break;
             case 'biennial': discount = 0.2; break;
@@ -137,16 +173,24 @@ document.addEventListener('DOMContentLoaded', function() {
         let discountAmount = monthlyPrice * discount;
         let finalPrice = monthlyPrice - discountAmount;
         
+        console.log('Calculated prices:', {
+            basePrice,
+            businessMultiplier,
+            additionalCost,
+            discountAmount,
+            finalPrice
+        });
+        
         // Generate recommendations
-        const recommendations = generateRecommendations(businessType, users, speed, services);
+        const recommendations = generateRecommendations(businessType.value, users, speed.value, services);
         
         // Display results
         displayResults({
-            businessType,
+            businessType: businessType.value,
             users,
-            speed,
+            speed: speed.value,
             services,
-            contract,
+            contract: contract.value,
             basePrice,
             additionalCost,
             discountAmount,
@@ -226,6 +270,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function displayResults(data) {
+        console.log('Displaying results:', data);
+        
         const speedInfo = {
             basic: { name: 'Basic', speed: 'Up to 100 Mbps', icon: '🐢' },
             professional: { name: 'Professional', speed: 'Up to 1 Gbps', icon: '🚀' },
@@ -338,6 +384,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         
         resultsContent.innerHTML = html;
+        console.log('Results HTML set');
         
         // Add animation to results
         resultsContent.style.opacity = '0';
@@ -347,10 +394,12 @@ document.addEventListener('DOMContentLoaded', function() {
             resultsContent.style.transition = 'all 0.5s ease';
             resultsContent.style.opacity = '1';
             resultsContent.style.transform = 'translateY(0)';
+            console.log('Results animation applied');
         }, 100);
     }
     
     // Initialize
+    console.log('Initializing calculator');
     updateUserRecommendation(10);
     updateNavigationButtons();
     
@@ -362,4 +411,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    console.log('Calculator initialization complete');
 });
