@@ -43,7 +43,7 @@ body {
 
 .logo h1 {
     color: #8b5cf6;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-weight: 800;
 }
 
@@ -1107,6 +1107,10 @@ body {
         display: flex;
     }
 
+    .logo h1 {
+        font-size: 1.8rem;
+    }
+
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1194,6 +1198,10 @@ body {
     .video-container {
         height: 250px;
         border-radius: 12px;
+    }
+
+    .logo h1 {
+        font-size: 1.6rem;
     }
 
     .stats-grid {
