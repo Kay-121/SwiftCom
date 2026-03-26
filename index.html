@@ -43,7 +43,7 @@
                 </div>
                 <div class="hero-image">
                     <div class="video-container">
-                        <video autoplay muted loop playsinline class="hero-video">
+                        <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
                             <!-- Primary telecom videos -->
                             <source src="https://assets.mixkit.co/videos/preview/mixkit-telecommunication-tower-39879-large.mp4" type="video/mp4">
                             <source src="https://assets.mixkit.co/videos/preview/mixkit-fiber-optic-technology-39878-large.mp4" type="video/mp4">
@@ -61,6 +61,15 @@
                             Your browser does not support the video tag.
                         </video>
                         <div class="video-overlay"></div>
+                        <button class="video-control-btn" id="videoControlBtn" title="Pause/Play Video">
+                            <svg class="pause-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect x="6" y="4" width="4" height="16" fill="white"/>
+                                <rect x="14" y="4" width="4" height="16" fill="white"/>
+                            </svg>
+                            <svg class="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+                                <path d="M8 5v14l11-7z" fill="white"/>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>

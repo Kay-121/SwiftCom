@@ -161,6 +161,38 @@ body {
     pointer-events: none;
 }
 
+.video-control-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+.video-control-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+.video-control-btn svg {
+    transition: all 0.3s ease;
+}
+
+.video-control-btn:hover svg {
+    transform: scale(1.2);
+}
+
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
@@ -1125,6 +1157,13 @@ body {
         border-radius: 16px;
     }
 
+    .video-control-btn {
+        width: 45px;
+        height: 45px;
+        bottom: 15px;
+        right: 15px;
+    }
+
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1198,6 +1237,13 @@ body {
     .video-container {
         height: 250px;
         border-radius: 12px;
+    }
+
+    .video-control-btn {
+        width: 40px;
+        height: 40px;
+        bottom: 12px;
+        right: 12px;
     }
 
     .logo h1 {

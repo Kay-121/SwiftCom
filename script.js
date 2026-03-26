@@ -1,3 +1,44 @@
+// Video Control Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const heroVideo = document.getElementById('heroVideo');
+    const videoControlBtn = document.getElementById('videoControlBtn');
+    const pauseIcon = videoControlBtn.querySelector('.pause-icon');
+    const playIcon = videoControlBtn.querySelector('.play-icon');
+    
+    if (heroVideo && videoControlBtn) {
+        videoControlBtn.addEventListener('click', function() {
+            if (heroVideo.paused) {
+                heroVideo.play();
+                pauseIcon.style.display = 'block';
+                playIcon.style.display = 'none';
+                videoControlBtn.title = 'Pause Video';
+            } else {
+                heroVideo.pause();
+                pauseIcon.style.display = 'none';
+                playIcon.style.display = 'block';
+                videoControlBtn.title = 'Play Video';
+            }
+        });
+        
+        // Update button state when video ends
+        heroVideo.addEventListener('ended', function() {
+            pauseIcon.style.display = 'none';
+            playIcon.style.display = 'block';
+            videoControlBtn.title = 'Play Video';
+        });
+        
+        // Handle video load errors
+        heroVideo.addEventListener('error', function() {
+            videoControlBtn.style.display = 'none';
+        });
+        
+        // Show button when video is loaded
+        heroVideo.addEventListener('loadeddata', function() {
+            videoControlBtn.style.display = 'flex';
+        });
+    }
+});
+
 // WhatsApp Popup Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const whatsappButton = document.getElementById('whatsappButton');
