@@ -1129,6 +1129,420 @@ body {
     background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
 }
 
+/* Calculator Section */
+.calculator-section {
+    padding: 80px 0;
+    background: #1e293b;
+}
+
+.calculator-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.calculator-form {
+    background: #0f172a;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.calculator-form h2 {
+    color: #f1f5f9;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.form-section {
+    margin-bottom: 2.5rem;
+}
+
+.form-section h3 {
+    color: #f1f5f9;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Radio Groups */
+.radio-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.radio-option:hover {
+    background: rgba(139, 92, 246, 0.1);
+}
+
+.radio-option input[type="radio"] {
+    display: none;
+}
+
+.radio-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #475569;
+    border-radius: 50%;
+    margin-right: 0.75rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.radio-option input[type="radio"]:checked + .radio-custom {
+    border-color: #8b5cf6;
+    background: #8b5cf6;
+}
+
+.radio-option input[type="radio"]:checked + .radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+}
+
+.radio-label {
+    color: #e2e8f0;
+    font-weight: 500;
+}
+
+/* Slider */
+.slider-container {
+    margin-bottom: 1rem;
+}
+
+.slider {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: #475569;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #8b5cf6;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
+    transition: all 0.3s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.5);
+}
+
+.slider-value {
+    text-align: center;
+    color: #f1f5f9;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.slider-value span {
+    color: #8b5cf6;
+    font-size: 1.3rem;
+}
+
+/* Speed Options */
+.speed-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.speed-option {
+    cursor: pointer;
+}
+
+.speed-option input[type="radio"] {
+    display: none;
+}
+
+.speed-card {
+    background: #1e293b;
+    border: 2px solid #475569;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.speed-card:hover {
+    border-color: #8b5cf6;
+    transform: translateY(-2px);
+}
+
+.speed-option input[type="radio"]:checked + .speed-card {
+    border-color: #8b5cf6;
+    background: rgba(139, 92, 246, 0.1);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+}
+
+.speed-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.speed-card h4 {
+    color: #f1f5f9;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.speed-card p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.speed-price {
+    color: #8b5cf6;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Checkbox Groups */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.checkbox-option:hover {
+    background: rgba(139, 92, 246, 0.05);
+}
+
+.checkbox-option input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #475569;
+    border-radius: 4px;
+    margin-right: 0.75rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkbox-option input[type="checkbox"]:checked + .checkbox-custom {
+    border-color: #8b5cf6;
+    background: #8b5cf6;
+}
+
+.checkbox-option input[type="checkbox"]:checked + .checkbox-custom::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.checkbox-label {
+    color: #e2e8f0;
+    font-weight: 500;
+}
+
+/* Contract Options */
+.contract-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contract-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.contract-option:hover {
+    background: rgba(139, 92, 246, 0.05);
+}
+
+.contract-option input[type="radio"] {
+    display: none;
+}
+
+/* Calculator Results */
+.calculator-results {
+    background: #0f172a;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.calculator-results h2 {
+    color: #f1f5f9;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.results-content {
+    min-height: 400px;
+}
+
+.placeholder-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    color: #94a3b8;
+}
+
+.placeholder-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #334155;
+}
+
+.plan-summary {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.plan-icon {
+    font-size: 3rem;
+}
+
+.plan-details h3 {
+    color: #f1f5f9;
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.plan-details p {
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+}
+
+.business-type {
+    background: #8b5cf6;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.price-display {
+    text-align: right;
+}
+
+.final-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #8b5cf6;
+    line-height: 1;
+}
+
+.price-period {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.savings {
+    color: #10b981;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Benefits Section */
+.benefits-section {
+    padding: 80px 0;
+    background: #0f172a;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.benefit-card {
+    background: #1e293b;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+    color: #f1f5f9;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.benefit-card p {
+    color: #94a3b8;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {

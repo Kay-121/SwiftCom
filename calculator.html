@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Calculator - SwiftCom</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>SwiftCom</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="calculator.html" class="nav-link active">Calculator</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Service Calculator</h1>
+                <p>Find the perfect telecommunications solution for your needs</p>
+            </div>
+        </section>
+
+        <section class="calculator-section">
+            <div class="container">
+                <div class="calculator-container">
+                    <div class="calculator-form">
+                        <h2>Tell us about your needs</h2>
+                        
+                        <div class="form-section">
+                            <h3>Business Type</h3>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="businessType" value="residential" checked>
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-label">Residential</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="businessType" value="small-business">
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-label">Small Business</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="businessType" value="enterprise">
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-label">Enterprise</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Number of Users</h3>
+                            <div class="slider-container">
+                                <input type="range" id="userSlider" min="1" max="1000" value="10" class="slider">
+                                <div class="slider-value">
+                                    <span id="userCount">10</span> users
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Internet Speed Requirements</h3>
+                            <div class="speed-options">
+                                <label class="speed-option">
+                                    <input type="radio" name="speed" value="basic" checked>
+                                    <div class="speed-card">
+                                        <div class="speed-icon">🐢</div>
+                                        <h4>Basic</h4>
+                                        <p>Up to 100 Mbps</p>
+                                        <span class="speed-price">$29/mo</span>
+                                    </div>
+                                </label>
+                                <label class="speed-option">
+                                    <input type="radio" name="speed" value="professional">
+                                    <div class="speed-card">
+                                        <div class="speed-icon">🚀</div>
+                                        <h4>Professional</h4>
+                                        <p>Up to 1 Gbps</p>
+                                        <span class="speed-price">$79/mo</span>
+                                    </div>
+                                </label>
+                                <label class="speed-option">
+                                    <input type="radio" name="speed" value="enterprise">
+                                    <div class="speed-card">
+                                        <div class="speed-icon">⚡</div>
+                                        <h4>Enterprise</h4>
+                                        <p>Up to 10 Gbps</p>
+                                        <span class="speed-price">$199/mo</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Additional Services</h3>
+                            <div class="checkbox-group">
+                                <label class="checkbox-option">
+                                    <input type="checkbox" id="mobile" value="mobile">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-label">Mobile Services (+$15/user)</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" id="voip" value="voip">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-label">VoIP Phone System (+$25/user)</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" id="cloud" value="cloud">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-label">Cloud Storage (+$10/user)</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" id="security" value="security">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-label">Security Suite (+$20/user)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Contract Length</h3>
+                            <div class="contract-options">
+                                <label class="contract-option">
+                                    <input type="radio" name="contract" value="monthly" checked>
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-label">Monthly (No discount)</span>
+                                </label>
+                                <label class="contract-option">
+                                    <input type="radio" name="contract" value="annual">
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-label">Annual (10% discount)</span>
+                                </label>
+                                <label class="contract-option">
+                                    <input type="radio" name="contract" value="biennial">
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-label">2-Year (20% discount)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-primary btn-large" id="calculateBtn">Calculate My Plan</button>
+                    </div>
+
+                    <div class="calculator-results">
+                        <h2>Your Recommended Plan</h2>
+                        <div id="resultsContent" class="results-content">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">📊</div>
+                                <p>Complete the form to see your personalized recommendation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="container">
+                <h2>Why Choose Our Calculator?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎯</div>
+                        <h3>Personalized Recommendations</h3>
+                        <p>Get tailored suggestions based on your specific needs and usage patterns</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💰</div>
+                        <h3>Transparent Pricing</h3>
+                        <p>No hidden fees. See exactly what you're paying for with detailed breakdowns</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⚡</div>
+                        <h3>Instant Results</h3>
+                        <p>Get immediate recommendations and pricing without waiting for quotes</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🔄</div>
+                        <h3>Flexible Options</h3>
+                        <p>Easily adjust your plan and see how changes affect your monthly costs</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Get Started?</h2>
+                    <p>Contact our sales team to discuss your customized solution</p>
+                    <a href="contact.html" class="btn btn-primary btn-large">Talk to Sales</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SwiftCom</h3>
+                    <p>Leading the future of telecommunications with innovative solutions and exceptional service.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="calculator.html">Calculator</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: info@swiftcom.com</p>
+                    <p>Phone: 1-800-SWIFTCOM</p>
+                    <p>Hours: 24/7 Support</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SwiftCom. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Popup -->
+    <div class="whatsapp-popup" id="whatsappPopup">
+        <div class="whatsapp-button" id="whatsappButton">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-1.08L17.45 15.1l-1.004-1.004c-.297-.297-.78-.297-1.077 0l-1.004 1.004c-.297.297-.297.78 0 1.077l1.004 1.004c-.213.272-.931 1.733-1.08 2.03-.149.297-.149.78 0 1.077l1.004 1.004c.297.297.78.297 1.077 0l1.004-1.004c.297-.297.297-.78 0-1.077l-1.004-1.004c.213-.272.931-1.733 1.08-2.03.149-.297.149-.78 0-1.077l-1.004-1.004c-.297-.297-.78-.297-1.077 0l-1.004 1.004c-.297.297-.297.78 0 1.077l1.004 1.004c-.213.272-.931-1.733-1.08-2.03-.149-.297-.149-.78 0-1.077l-1.004-1.004c-.297-.297-.78-.297-1.077 0l-1.004 1.004c-.297.297-.297.78 0 1.077l1.004 1.004c-.213.272-.931-1.733-1.08-2.03-.149-.297-.149-.78 0-1.077l-1.004-1.004c-.297-.297-.78-.297-1.077 0l-1.004 1.004c-.297.297-.297.78 0 1.077z" fill="#25D366"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="#25D366"/>
+            </svg>
+        </div>
+        <div class="whatsapp-chat" id="whatsappChat">
+            <div class="whatsapp-header">
+                <div class="whatsapp-info">
+                    <div class="whatsapp-avatar">👤</div>
+                    <div class="whatsapp-details">
+                        <h4>SwiftCom Support</h4>
+                        <p>Typically replies instantly</p>
+                    </div>
+                </div>
+                <button class="whatsapp-close" id="whatsappClose">✕</button>
+            </div>
+            <div class="whatsapp-messages">
+                <div class="whatsapp-message bot">
+                    <p>👋 Hello! Welcome to SwiftCom Support! How can I help you today?</p>
+                </div>
+            </div>
+            <div class="whatsapp-input-container">
+                <input type="text" class="whatsapp-input" id="whatsappInput" placeholder="Type a message...">
+                <button class="whatsapp-send" id="whatsappSend">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="calculator.js"></script>
+</body>
+</html>
