@@ -40,132 +40,432 @@
             </div>
         </section>
 
+        <section class="calculator-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Find Your Perfect Plan</h1>
+                    <p>Get a customized telecommunications solution tailored to your specific needs and budget</p>
+                    <div class="hero-features">
+                        <div class="hero-feature">
+                            <span class="feature-icon">⚡</span>
+                            <span>Instant Results</span>
+                        </div>
+                        <div class="hero-feature">
+                            <span class="feature-icon">💰</span>
+                            <span>Transparent Pricing</span>
+                        </div>
+                        <div class="hero-feature">
+                            <span class="feature-icon">🎯</span>
+                            <span>Personalized Recommendations</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="calculator-preview">
+                        <div class="preview-header">
+                            <div class="preview-icon">🧮</div>
+                            <h3>Smart Calculator</h3>
+                        </div>
+                        <div class="preview-content">
+                            <div class="preview-item">
+                                <span class="preview-label">Business Type</span>
+                                <span class="preview-value">Enterprise</span>
+                            </div>
+                            <div class="preview-item">
+                                <span class="preview-label">Users</span>
+                                <span class="preview-value">250</span>
+                            </div>
+                            <div class="preview-item">
+                                <span class="preview-label">Speed</span>
+                                <span class="preview-value">Professional</span>
+                            </div>
+                            <div class="preview-total">
+                                <span class="total-label">Est. Monthly</span>
+                                <span class="total-value">$1,247</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="calculator-section">
             <div class="container">
+                <div class="calculator-intro">
+                    <h2>Calculate Your Ideal Plan</h2>
+                    <p>Answer a few questions about your needs and we'll recommend the perfect telecommunications solution for your business or home.</p>
+                </div>
+                
                 <div class="calculator-container">
                     <div class="calculator-form">
-                        <h2>Tell us about your needs</h2>
+                        <div class="form-progress">
+                            <div class="progress-step active" data-step="1">
+                                <div class="step-number">1</div>
+                                <span class="step-label">Business Type</span>
+                            </div>
+                            <div class="progress-step" data-step="2">
+                                <div class="step-number">2</div>
+                                <span class="step-label">Users</span>
+                            </div>
+                            <div class="progress-step" data-step="3">
+                                <div class="step-number">3</div>
+                                <span class="step-label">Speed</span>
+                            </div>
+                            <div class="progress-step" data-step="4">
+                                <div class="step-number">4</div>
+                                <span class="step-label">Services</span>
+                            </div>
+                            <div class="progress-step" data-step="5">
+                                <div class="step-number">5</div>
+                                <span class="step-label">Contract</span>
+                            </div>
+                        </div>
                         
-                        <div class="form-section">
-                            <h3>Business Type</h3>
-                            <div class="radio-group">
-                                <label class="radio-option">
+                        <div class="form-section active" data-section="1">
+                            <div class="section-header">
+                                <div class="section-icon">🏢</div>
+                                <h3>What type of customer are you?</h3>
+                                <p>Select the category that best describes your needs</p>
+                            </div>
+                            <div class="business-options">
+                                <label class="business-option">
                                     <input type="radio" name="businessType" value="residential" checked>
-                                    <span class="radio-custom"></span>
-                                    <span class="radio-label">Residential</span>
+                                    <div class="option-card">
+                                        <div class="option-icon">🏠</div>
+                                        <h4>Residential</h4>
+                                        <p>Perfect for home users and families</p>
+                                        <div class="option-features">
+                                            <span>✓ High-speed internet</span>
+                                            <span>✓ Streaming support</span>
+                                            <span>✓ Basic security</span>
+                                        </div>
+                                    </div>
                                 </label>
-                                <label class="radio-option">
+                                <label class="business-option">
                                     <input type="radio" name="businessType" value="small-business">
-                                    <span class="radio-custom"></span>
-                                    <span class="radio-label">Small Business</span>
+                                    <div class="option-card">
+                                        <div class="option-icon">🏪</div>
+                                        <h4>Small Business</h4>
+                                        <p>Ideal for startups and growing companies</p>
+                                        <div class="option-features">
+                                            <span>✓ Business-grade speeds</span>
+                                            <span>✓ Priority support</span>
+                                            <span>✓ Advanced security</span>
+                                        </div>
+                                    </div>
                                 </label>
-                                <label class="radio-option">
+                                <label class="business-option">
                                     <input type="radio" name="businessType" value="enterprise">
-                                    <span class="radio-custom"></span>
-                                    <span class="radio-label">Enterprise</span>
+                                    <div class="option-card">
+                                        <div class="option-icon">🏢</div>
+                                        <h4>Enterprise</h4>
+                                        <p>For large organizations with complex needs</p>
+                                        <div class="option-features">
+                                            <span>✓ Enterprise infrastructure</span>
+                                            <span>✓ Dedicated support</span>
+                                            <span>✓ Custom solutions</span>
+                                        </div>
+                                    </div>
                                 </label>
                             </div>
                         </div>
 
-                        <div class="form-section">
-                            <h3>Number of Users</h3>
-                            <div class="slider-container">
-                                <input type="range" id="userSlider" min="1" max="1000" value="10" class="slider">
-                                <div class="slider-value">
-                                    <span id="userCount">10</span> users
+                        <div class="form-section" data-section="2">
+                            <div class="section-header">
+                                <div class="section-icon">👥</div>
+                                <h3>How many users will need service?</h3>
+                                <p>Include all employees, family members, or devices that will connect</p>
+                            </div>
+                            <div class="users-selector">
+                                <div class="slider-container">
+                                    <input type="range" id="userSlider" min="1" max="1000" value="10" class="slider">
+                                    <div class="slider-labels">
+                                        <span>1</span>
+                                        <span>250</span>
+                                        <span>500</span>
+                                        <span>750</span>
+                                        <span>1000+</span>
+                                    </div>
+                                </div>
+                                <div class="user-display">
+                                    <div class="user-count">
+                                        <span class="count-number" id="userCount">10</span>
+                                        <span class="count-label">Users</span>
+                                    </div>
+                                    <div class="user-recommendation">
+                                        <span class="recommendation-icon">💡</span>
+                                        <span class="recommendation-text">Perfect for small teams</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="form-section">
-                            <h3>Internet Speed Requirements</h3>
+                        <div class="form-section" data-section="3">
+                            <div class="section-header">
+                                <div class="section-icon">⚡</div>
+                                <h3>What speed do you need?</h3>
+                                <p>Choose the internet speed that matches your usage requirements</p>
+                            </div>
                             <div class="speed-options">
                                 <label class="speed-option">
                                     <input type="radio" name="speed" value="basic" checked>
                                     <div class="speed-card">
-                                        <div class="speed-icon">🐢</div>
-                                        <h4>Basic</h4>
-                                        <p>Up to 100 Mbps</p>
-                                        <span class="speed-price">$29/mo</span>
+                                        <div class="speed-header">
+                                            <div class="speed-icon">🐢</div>
+                                            <div class="speed-info">
+                                                <h4>Basic</h4>
+                                                <p>Everyday browsing & streaming</p>
+                                            </div>
+                                            <div class="speed-price">$29/mo</div>
+                                        </div>
+                                        <div class="speed-details">
+                                            <div class="speed-spec">
+                                                <span class="spec-label">Download</span>
+                                                <span class="spec-value">Up to 100 Mbps</span>
+                                            </div>
+                                            <div class="speed-spec">
+                                                <span class="spec-label">Upload</span>
+                                                <span class="spec-value">Up to 20 Mbps</span>
+                                            </div>
+                                            <div class="speed-spec">
+                                                <span class="spec-label">Latency</span>
+                                                <span class="spec-value">&lt; 50ms</span>
+                                            </div>
+                                        </div>
+                                        <div class="speed-features">
+                                            <span>✓ HD streaming</span>
+                                            <span>✓ Video calls</span>
+                                            <span>✓ Online gaming</span>
+                                        </div>
                                     </div>
                                 </label>
                                 <label class="speed-option">
                                     <input type="radio" name="speed" value="professional">
                                     <div class="speed-card">
-                                        <div class="speed-icon">🚀</div>
-                                        <h4>Professional</h4>
-                                        <p>Up to 1 Gbps</p>
-                                        <span class="speed-price">$79/mo</span>
+                                        <div class="speed-header">
+                                            <div class="speed-icon">🚀</div>
+                                            <div class="speed-info">
+                                                <h4>Professional</h4>
+                                                <p>Business & power users</p>
+                                            </div>
+                                            <div class="speed-price">$79/mo</div>
+                                        </div>
+                                        <div class="speed-details">
+                                            <div class="speed-spec">
+                                                <span class="spec-label">Download</span>
+                                                <span class="spec-value">Up to 1 Gbps</span>
+                                            </div>
+                                            <div class="speed-spec">
+                                                <span class="spec-label">Upload</span>
+                                                <span class="spec-value">Up to 500 Mbps</span>
+                                            </div>
+                                            <div class="speed-spec">
+                                                <span class="spec-label">Latency</span>
+                                                <span class="spec-value">&lt; 20ms</span>
+                                            </div>
+                                        </div>
+                                        <div class="speed-features">
+                                            <span>✓ 4K streaming</span>
+                                            <span>✓ Large file transfers</span>
+                                            <span>✓ Multiple users</span>
+                                        </div>
                                     </div>
                                 </label>
                                 <label class="speed-option">
                                     <input type="radio" name="speed" value="enterprise">
                                     <div class="speed-card">
-                                        <div class="speed-icon">⚡</div>
-                                        <h4>Enterprise</h4>
-                                        <p>Up to 10 Gbps</p>
-                                        <span class="speed-price">$199/mo</span>
+                                        <div class="speed-header">
+                                            <div class="speed-icon">⚡</div>
+                                            <div class="speed-info">
+                                                <h4>Enterprise</h4>
+                                                <p>Mission-critical operations</p>
+                                            </div>
+                                            <div class="speed-price">$199/mo</div>
+                                        </div>
+                                        <div class="speed-details">
+                                            <div class="speed-spec">
+                                                <span class="spec-label">Download</span>
+                                                <span class="spec-value">Up to 10 Gbps</span>
+                                            </div>
+                                            <div class="speed-spec">
+                                                <span class="spec-label">Upload</span>
+                                                <span class="spec-value">Up to 10 Gbps</span>
+                                            </div>
+                                            <div class="speed-spec">
+                                                <span class="spec-label">Latency</span>
+                                                <span class="spec-value">&lt; 10ms</span>
+                                            </div>
+                                        </div>
+                                        <div class="speed-features">
+                                            <span>✓ 8K streaming</span>
+                                            <span>✓ Real-time collaboration</span>
+                                            <span>✓ Cloud computing</span>
+                                        </div>
                                     </div>
                                 </label>
                             </div>
                         </div>
 
-                        <div class="form-section">
-                            <h3>Additional Services</h3>
-                            <div class="checkbox-group">
-                                <label class="checkbox-option">
+                        <div class="form-section" data-section="4">
+                            <div class="section-header">
+                                <div class="section-icon">🔧</div>
+                                <h3>Additional services you might need</h3>
+                                <p>Enhance your plan with these optional services</p>
+                            </div>
+                            <div class="services-grid">
+                                <label class="service-item">
                                     <input type="checkbox" id="mobile" value="mobile">
-                                    <span class="checkbox-custom"></span>
-                                    <span class="checkbox-label">Mobile Services (+$15/user)</span>
+                                    <div class="service-card">
+                                        <div class="service-header">
+                                            <div class="service-icon">📱</div>
+                                            <div class="service-info">
+                                                <h4>Mobile Services</h4>
+                                                <p>+ $15/user per month</p>
+                                            </div>
+                                        </div>
+                                        <div class="service-features">
+                                            <span>✓ Unlimited data</span>
+                                            <span>✓ 5G coverage</span>
+                                            <span>✓ International roaming</span>
+                                        </div>
+                                    </div>
                                 </label>
-                                <label class="checkbox-option">
+                                <label class="service-item">
                                     <input type="checkbox" id="voip" value="voip">
-                                    <span class="checkbox-custom"></span>
-                                    <span class="checkbox-label">VoIP Phone System (+$25/user)</span>
+                                    <div class="service-card">
+                                        <div class="service-header">
+                                            <div class="service-icon">☎️</div>
+                                            <div class="service-info">
+                                                <h4>VoIP Phone System</h4>
+                                                <p>+ $25/user per month</p>
+                                            </div>
+                                        </div>
+                                        <div class="service-features">
+                                            <span>✓ HD voice quality</span>
+                                            <span>✓ Video conferencing</span>
+                                            <span>✓ Call recording</span>
+                                        </div>
+                                    </div>
                                 </label>
-                                <label class="checkbox-option">
+                                <label class="service-item">
                                     <input type="checkbox" id="cloud" value="cloud">
-                                    <span class="checkbox-custom"></span>
-                                    <span class="checkbox-label">Cloud Storage (+$10/user)</span>
+                                    <div class="service-card">
+                                        <div class="service-header">
+                                            <div class="service-icon">☁️</div>
+                                            <div class="service-info">
+                                                <h4>Cloud Storage</h4>
+                                                <p>+ $10/user per month</p>
+                                            </div>
+                                        </div>
+                                        <div class="service-features">
+                                            <span>✓ 1TB storage</span>
+                                            <span>✓ Automatic backup</span>
+                                            <span>✓ File sharing</span>
+                                        </div>
+                                    </div>
                                 </label>
-                                <label class="checkbox-option">
+                                <label class="service-item">
                                     <input type="checkbox" id="security" value="security">
-                                    <span class="checkbox-custom"></span>
-                                    <span class="checkbox-label">Security Suite (+$20/user)</span>
+                                    <div class="service-card">
+                                        <div class="service-header">
+                                            <div class="service-icon">🔒</div>
+                                            <div class="service-info">
+                                                <h4>Security Suite</h4>
+                                                <p>+ $20/user per month</p>
+                                            </div>
+                                        </div>
+                                        <div class="service-features">
+                                            <span>✓ Advanced firewall</span>
+                                            <span>✓ Threat protection</span>
+                                            <span>✓ VPN access</span>
+                                        </div>
+                                    </div>
                                 </label>
                             </div>
                         </div>
 
-                        <div class="form-section">
-                            <h3>Contract Length</h3>
+                        <div class="form-section" data-section="5">
+                            <div class="section-header">
+                                <div class="section-icon">📋</div>
+                                <h3>Choose your commitment level</h3>
+                                <p>Longer commitments mean better savings</p>
+                            </div>
                             <div class="contract-options">
                                 <label class="contract-option">
                                     <input type="radio" name="contract" value="monthly" checked>
-                                    <span class="radio-custom"></span>
-                                    <span class="radio-label">Monthly (No discount)</span>
+                                    <div class="contract-card">
+                                        <div class="contract-header">
+                                            <h4>Monthly</h4>
+                                            <p class="contract-price">No discount</p>
+                                        </div>
+                                        <div class="contract-features">
+                                            <span>✓ Maximum flexibility</span>
+                                            <span>✓ Cancel anytime</span>
+                                            <span>✓ No long-term commitment</span>
+                                        </div>
+                                    </div>
                                 </label>
                                 <label class="contract-option">
                                     <input type="radio" name="contract" value="annual">
-                                    <span class="radio-custom"></span>
-                                    <span class="radio-label">Annual (10% discount)</span>
+                                    <div class="contract-card">
+                                        <div class="contract-header">
+                                            <h4>Annual</h4>
+                                            <p class="contract-price">10% discount</p>
+                                            <div class="discount-badge">Save 10%</div>
+                                        </div>
+                                        <div class="contract-features">
+                                            <span>✓ Great savings</span>
+                                            <span>✓ Fixed price for 12 months</span>
+                                            <span>✓ Priority support</span>
+                                        </div>
+                                    </div>
                                 </label>
                                 <label class="contract-option">
                                     <input type="radio" name="contract" value="biennial">
-                                    <span class="radio-custom"></span>
-                                    <span class="radio-label">2-Year (20% discount)</span>
+                                    <div class="contract-card">
+                                        <div class="contract-header">
+                                            <h4>2-Year</h4>
+                                            <p class="contract-price">20% discount</p>
+                                            <div class="discount-badge">Save 20%</div>
+                                        </div>
+                                        <div class="contract-features">
+                                            <span>✓ Maximum savings</span>
+                                            <span>✓ Price lock for 24 months</span>
+                                            <span>✓ Premium support</span>
+                                        </div>
+                                    </div>
                                 </label>
                             </div>
                         </div>
 
-                        <button type="button" class="btn btn-primary btn-large" id="calculateBtn">Calculate My Plan</button>
+                        <div class="form-navigation">
+                            <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;">Previous</button>
+                            <button type="button" class="btn btn-primary" id="nextBtn">Next Step</button>
+                            <button type="button" class="btn btn-primary btn-large" id="calculateBtn" style="display: none;">Calculate My Plan</button>
+                        </div>
                     </div>
 
                     <div class="calculator-results">
-                        <h2>Your Recommended Plan</h2>
+                        <div class="results-header">
+                            <h2>Your Customized Plan</h2>
+                            <p>Based on your requirements, here's our recommendation</p>
+                        </div>
                         <div id="resultsContent" class="results-content">
                             <div class="placeholder-content">
-                                <div class="placeholder-icon">📊</div>
-                                <p>Complete the form to see your personalized recommendation</p>
+                                <div class="placeholder-icon">🧮</div>
+                                <h3>Ready to calculate your plan?</h3>
+                                <p>Complete the form to see your personalized recommendation and pricing</p>
+                                <div class="placeholder-steps">
+                                    <span>Step 1: Business Type</span>
+                                    <span>→</span>
+                                    <span>Step 2: Users</span>
+                                    <span>→</span>
+                                    <span>Step 3: Speed</span>
+                                    <span>→</span>
+                                    <span>Step 4: Services</span>
+                                    <span>→</span>
+                                    <span>Step 5: Contract</span>
+                                </div>
                             </div>
                         </div>
                     </div>

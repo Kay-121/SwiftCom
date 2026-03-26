@@ -1,18 +1,92 @@
-// Service Calculator JavaScript
+// Enhanced Service Calculator JavaScript
 document.addEventListener('DOMContentLoaded', function() {
     const userSlider = document.getElementById('userSlider');
     const userCount = document.getElementById('userCount');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
     const calculateBtn = document.getElementById('calculateBtn');
     const resultsContent = document.getElementById('resultsContent');
+    
+    let currentStep = 1;
+    const totalSteps = 5;
     
     // Update user count display
     userSlider.addEventListener('input', function() {
         userCount.textContent = this.value;
+        updateUserRecommendation(this.value);
     });
     
-    // Calculate button click handler
+    // Update user recommendation based on count
+    function updateUserRecommendation(count) {
+        const recommendationText = document.querySelector('.recommendation-text');
+        if (recommendationText) {
+            if (count <= 10) {
+                recommendationText.textContent = 'Perfect for small teams';
+            } else if (count <= 50) {
+                recommendationText.textContent = 'Great for growing businesses';
+            } else if (count <= 200) {
+                recommendationText.textContent = 'Ideal for medium companies';
+            } else {
+                recommendationText.textContent = 'Enterprise-level solution';
+            }
+        }
+    }
+    
+    // Step navigation
+    nextBtn.addEventListener('click', nextStep);
+    prevBtn.addEventListener('click', prevStep);
     calculateBtn.addEventListener('click', calculatePlan);
     
+    function nextStep() {
+        if (currentStep < totalSteps) {
+            showStep(currentStep + 1);
+        }
+    }
+    
+    function prevStep() {
+        if (currentStep > 1) {
+            showStep(currentStep - 1);
+        }
+    }
+    
+    function showStep(step) {
+        // Hide current step
+        const currentSection = document.querySelector(`.form-section[data-section="${currentStep}"]`);
+        const currentProgress = document.querySelector(`.progress-step[data-step="${currentStep}"]`);
+        
+        currentSection.classList.remove('active');
+        currentProgress.classList.remove('active');
+        
+        // Show new step
+        const newSection = document.querySelector(`.form-section[data-section="${step}"]`);
+        const newProgress = document.querySelector(`.progress-step[data-step="${step}"]`);
+        
+        newSection.classList.add('active');
+        newProgress.classList.add('active');
+        
+        currentStep = step;
+        updateNavigationButtons();
+    }
+    
+    function updateNavigationButtons() {
+        // Update previous button
+        if (currentStep === 1) {
+            prevBtn.style.display = 'none';
+        } else {
+            prevBtn.style.display = 'block';
+        }
+        
+        // Update next/calculate button
+        if (currentStep === totalSteps) {
+            nextBtn.style.display = 'none';
+            calculateBtn.style.display = 'block';
+        } else {
+            nextBtn.style.display = 'block';
+            calculateBtn.style.display = 'none';
+        }
+    }
+    
+    // Calculate button click handler
     function calculatePlan() {
         const businessType = document.querySelector('input[name="businessType"]:checked').value;
         const users = parseInt(userSlider.value);
@@ -79,6 +153,11 @@ document.addEventListener('DOMContentLoaded', function() {
             finalPrice,
             recommendations
         });
+        
+        // Scroll to results
+        setTimeout(() => {
+            resultsContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
     }
     
     function generateRecommendations(businessType, users, speed, services) {
@@ -254,6 +333,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="action-buttons">
                 <button class="btn btn-primary" onclick="window.location.href='contact.html'">Contact Sales</button>
                 <button class="btn btn-secondary" onclick="window.print()">Print Quote</button>
+                <button class="btn btn-secondary" onclick="location.reload()">Start Over</button>
             </div>
         `;
         
@@ -270,10 +350,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     }
     
-    // Auto-calculate on form changes
+    // Initialize
+    updateUserRecommendation(10);
+    updateNavigationButtons();
+    
+    // Auto-calculate on form changes (only when on last step)
     document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
         input.addEventListener('change', function() {
-            if (resultsContent.querySelector('.results-header')) {
+            if (currentStep === totalSteps && resultsContent.querySelector('.results-header')) {
                 calculatePlan();
             }
         });
